@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cab="clr-namespace:App11_Mimica.View.Util"
+             mc:Ignorable="d"
+             x:Class="App11_Mimica.View.Resultado">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+                <cab:Cabecalho />
+                <StackLayout Style="{StaticResource Container}">
+                    <Frame>
+                        <StackLayout Style="{StaticResource ContainerEspecial}">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Grupo 1" FontSize="20" />
+                                <Label Text="{Binding Jogo.Grupo1.Nome}" FontSize="20" />
+                            </StackLayout>
+                            <Label Text="{Binding Jogo.Grupo1.Pontuacao}" FontSize="50" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame>
+                        <StackLayout  Style="{StaticResource ContainerEspecial}">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Grupo 2" FontSize="20" />
+                                <Label Text="{Binding Jogo.Grupo2.Nome}" FontSize="20" />
+                            </StackLayout>
+                            <Label Text="{Binding Jogo.Grupo2.Pontuacao}" FontSize="50" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </Frame>
+                    <Button Command="{Binding JogarNovamente}" Text="Jogar outra vez" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

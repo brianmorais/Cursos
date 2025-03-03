@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App12_Realm.MainPage">
+
+    <StackLayout>
+        <StackLayout>
+            <Label x:Name="lblId" Text="" IsVisible="False" />
+            <Entry x:Name="txtItem" Placeholder="Item" />
+            <Entry x:Name="txtQuantidade" Placeholder="Quantidade" Keyboard="Numeric" />
+            <Button x:Name="btnAdicionar" Text="Salvar" />
+        </StackLayout>
+        <StackLayout>
+            <ListView x:Name="listaProdutos">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Item}" Detail="{Binding Quantidade}">
+                            <TextCell.ContextActions>
+                                <MenuItem Text="Excluir" Clicked="MenuItemExcluir_Clicked" CommandParameter="{Binding .}" IsDestructive="True" />
+                                <MenuItem Text="Editar" Clicked="MenuItemEditar_Clicked" CommandParameter="{Binding .}" />
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

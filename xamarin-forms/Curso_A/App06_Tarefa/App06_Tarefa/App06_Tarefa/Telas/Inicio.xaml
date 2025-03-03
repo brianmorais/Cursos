@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="App06_Tarefa.Telas.Inicio">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout BackgroundColor="Blue" HeightRequest="250">
+                <Label Text="Meu Dia" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" />
+                <Label Text="" x:Name="DataHoje" HorizontalOptions="Start" VerticalOptions="End" TextColor="White" />
+            </StackLayout>
+
+            <StackLayout x:Name="SLTarefas" Padding="10" Spacing="10">
+                <!--
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Action" />
+                </StackLayout.GestureRecognizers>
+                -->
+            </StackLayout>
+
+            <Button HorizontalOptions="Center" Clicked="ActionGoCadastro" BackgroundColor="Transparent">
+                <Button.ImageSource>
+                    <OnPlatform x:TypeArguments="FileImageSource">
+                        <On Platform="Android" Value="AddBotao.png" />
+                        <On Platform="UWP" Value="Resources/AddBotao.png" />
+                    </OnPlatform>
+                </Button.ImageSource>
+            </Button>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
