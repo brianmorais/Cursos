@@ -1,0 +1,12 @@
+//Instalação dos pacotes do EntityFramework
+//Necessario ter a referencia System.Data.Entity
+install-package entityframework
+
+//Habilitar as migrações
+enable-migrations
+
+//Adicionar migração
+add-migration "nome da migração sem aspas"
+
+//Atualizando banco de dados
+update-database
