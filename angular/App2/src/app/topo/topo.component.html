@@ -1,0 +1,43 @@
+<div class="fixed-top navbar-expand-md navbar-light bg-light">
+    <div class="container" style="margin-top: 30px;">
+        <div class="row">
+            <div class="col-md-3" style="padding-bottom: 20px;">
+                <a routerLink="" class="navbar-brand">
+                    <img class="img-fluid" src="/assets/logo.png" />
+                </a>
+            </div>
+            <div class="col-md-7" style="padding-top: 10px;">
+
+                <input style="margin-right: 30px;" type="text" placeholder="Pesquise por ofertas..."
+                    class="form-control" #termoDaPesquisa (keyup)="pesquisa(termoDaPesquisa.value)" />
+
+                <ul class="list-group" style="position: absolute; z-index: 999;">
+                    <li class="list-group-item" *ngFor="let oferta of ofertas | async">
+                        <a [routerLink]="['/oferta', oferta.id]" (click)="limpaPesquisa()">
+                            {{ oferta.titulo | descricaoReduzida:15 }}
+                        </a>
+                    </li>
+                </ul>
+                
+            </div>
+            <div style="padding-top: 5px;" class="col-md-2">
+                <a routerLink="/ordem-compra"><img class="img-fluid" src="/assets/carrinho.png" /></a>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/restaurantes">Restaurantes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/diversao">Diversão</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="banner">
+    <img src="/assets/banners/img_1.jpg" />
+</div>
